@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import io from "socket.io-client";
+import { Input, Button } from "@mui/material";
+import styles from "./styles.module.css";
 
 export function Join({ setVisibleChat, setSocket }) {
   const usernameRef = useRef();
@@ -15,11 +17,21 @@ export function Join({ setVisibleChat, setSocket }) {
     setVisibleChat(true);
   };
 
+  const getEnterKey = (e) => {
+    if (e.key === "Enter") handleSubmit();
+  };
+
   return (
-    <div>
-      <h1>Join</h1>
-      <input type="text" ref={usernameRef} placeholder="Nome de usuário" />
-      <button onClick={() => handleSubmit()}>Entrar</button>
+    <div className={styles["join-container"]}>
+      <h2>Chat em tempo real</h2>
+      <Input
+        inputRef={usernameRef}
+        onKeyDown={(e) => getEnterKey(e)}
+        placeholder="Nome de usuário"
+      />
+      <Button sx={{ mt: 2 }} onClick={() => handleSubmit()} variant="contained">
+        Entrar
+      </Button>
     </div>
   );
 }
