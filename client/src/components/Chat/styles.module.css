@@ -1,13 +1,13 @@
 .chat-container {
-  height: 600px;
-  width: 400px;
+  height: 37.5rem;
+  width: 25rem;
   background-color: #fff;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
 }
 .chat-body {
   padding: 0 10px;
-  height: 550px;
+  height: 34.375rem;
   overflow-y: scroll;
   color: #000;
   display: flex;
@@ -15,17 +15,19 @@
 }
 
 .message-container {
-  max-width: 250px;
+  max-width: 15.625rem;
   width: fit-content;
   background-color: lightgrey;
   margin-top: 10px;
   padding: 5px 10px;
   border-radius: 7px;
   align-self: start;
+  text-align: start;
 }
 
 .message-mine {
   align-self: end;
+  text-align: end;
   background-color: skyblue;
 }
 
@@ -36,5 +38,5 @@
   display: flex;
   align-items: center;
   bottom: 0;
-  height: 50px;
+  height: 3.125rem;
 }
