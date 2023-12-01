@@ -1,13 +1,17 @@
 import React, { useRef } from "react";
+import io from "socket.io-client";
 
 export function Join({ setVisibleChat }) {
   const usernameRef = useRef();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const username = usernameRef.current.value;
+    const socket = io("http://localhost:3001");
 
     if (!username.trim()) return;
+    socket.emit("set_username", username);
 
+    // setSocket(socket);
     setVisibleChat(true);
   };
 
